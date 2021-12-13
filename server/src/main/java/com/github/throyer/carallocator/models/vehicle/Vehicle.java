@@ -1,21 +1,17 @@
 package com.github.throyer.carallocator.models.vehicle;
 
-import com.github.throyer.carallocator.dtos.SimplifiedVehicle;
-import com.github.throyer.carallocator.models.BodyType;
-import com.github.throyer.carallocator.models.Group;
-import com.github.throyer.carallocator.models.Model;
-import com.github.throyer.carallocator.models.VehicleOptional;
-import com.github.throyer.carallocator.models.VehiclePhoto;
+import static javax.persistence.CascadeType.DETACH;
+import static javax.persistence.FetchType.LAZY;
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
-import static javax.persistence.CascadeType.DETACH;
+
 import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
-import static javax.persistence.FetchType.LAZY;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -24,6 +20,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SqlResultSetMapping;
+
+import com.github.throyer.carallocator.dtos.SimplifiedVehicle;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

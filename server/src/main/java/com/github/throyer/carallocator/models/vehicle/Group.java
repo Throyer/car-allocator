@@ -1,18 +1,18 @@
-package com.github.throyer.carallocator.models;
+package com.github.throyer.carallocator.models.vehicle;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "optional")
 @NoArgsConstructor
-public class VehicleOptional {
+public class Group {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)

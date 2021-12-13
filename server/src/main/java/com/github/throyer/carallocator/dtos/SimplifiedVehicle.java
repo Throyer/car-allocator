@@ -1,6 +1,7 @@
 package com.github.throyer.carallocator.dtos;
 
 import java.util.Objects;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -91,11 +92,10 @@ public class SimplifiedVehicle {
     @NoArgsConstructor
     private class SimplifiedModel extends SimplifiedRelation {
         private SimplifiedRelation manufacturer;
-
+        
         public SimplifiedModel(Long id, String name, SimplifiedRelation manufacturer) {
             super(id, name);
             this.manufacturer = manufacturer;
-        }
-        
+        }        
     }
 }

@@ -1,10 +1,13 @@
-package com.github.throyer.carallocator.models;
+package com.github.throyer.carallocator.models.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 //import org.springframework.security.core.GrantedAuthority;

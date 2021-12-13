@@ -1,13 +1,18 @@
-package com.github.throyer.carallocator.models;
+package com.github.throyer.carallocator.models.allocation;
 
-import com.github.throyer.carallocator.models.vehicle.Vehicle;
-import java.time.LocalDateTime;
-import javax.persistence.Entity;
 import static javax.persistence.FetchType.LAZY;
-import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import com.github.throyer.carallocator.models.user.User;
+import com.github.throyer.carallocator.models.vehicle.Vehicle;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
