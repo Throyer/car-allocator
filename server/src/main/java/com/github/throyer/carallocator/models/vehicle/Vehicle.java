@@ -38,8 +38,7 @@ import lombok.NoArgsConstructor;
 @SqlResultSetMapping(
     name = "SimplifiedVehicle",
     classes = @ConstructorResult(
-        targetClass = SimplifiedVehicle.class,
-        
+        targetClass = SimplifiedVehicle.class,        
         columns = {
             @ColumnResult(name = "id", type = long.class),
             @ColumnResult(name = "totalKilometers", type = int.class),
