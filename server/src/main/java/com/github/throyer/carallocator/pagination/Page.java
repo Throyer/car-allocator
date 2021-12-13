@@ -17,10 +17,10 @@ public class Page<T> {
         this.totalElements = page.getTotalElements();
     }
     
-    public Page(Collection<T> content, Long count, Integer page, Integer size) {
+    public Page(Collection<T> content, Long count, Paginator paginator) {
         this.content = content;
-        this.page = page;
-        this.size = size;
+        this.page = paginator.getPage();
+        this.size = paginator.getPage();
         this.totalPages = (int) Math.ceil(count / size);
         this.totalElements = count;
     }

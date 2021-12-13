@@ -15,13 +15,13 @@ public class FindAvailableSimplifiedVehicles {
     private VehicleRepository repository;
     
     public Page<SimplifiedVehicle> findAll(Paginator paginator) {
-        var limit = paginator.getSize();
-        var offset = (limit * (paginator.getPage() + 1)) - limit;
+        var limit = paginator.getLimit();
+        var offset = paginator.getOffset();
         
         var vehicles = repository.findAllSimplified(limit, offset);
         var count = repository.countAllSimplified();
         
-        Page<SimplifiedVehicle> page = new Page(vehicles, count, offset, limit);
+        Page<SimplifiedVehicle> page = new Page<>(vehicles, count, paginator);
 
         return page;
     }

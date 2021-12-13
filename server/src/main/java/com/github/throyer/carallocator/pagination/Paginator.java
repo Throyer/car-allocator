@@ -39,8 +39,16 @@ public class Paginator {
             this.size = DEFAULT_SIZE;
         }
     }
-    
+
     public Pageable pageable() {
-        return of(page - 1, size);
+        return of(page, size);
+    }
+
+    public Integer getLimit() {
+        return this.size;
+    }
+
+    public Integer getOffset() {
+        return (this.size * (this.page + 1)) - this.size;
     }
 }
