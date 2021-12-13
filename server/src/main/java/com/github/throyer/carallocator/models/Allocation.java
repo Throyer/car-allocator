@@ -1,5 +1,6 @@
 package com.github.throyer.carallocator.models;
 
+import com.github.throyer.carallocator.models.vehicle.Vehicle;
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import static javax.persistence.FetchType.LAZY;

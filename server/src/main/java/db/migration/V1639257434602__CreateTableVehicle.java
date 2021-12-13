@@ -19,15 +19,15 @@ public class V1639257434602__CreateTableVehicle extends BaseJavaMigration {
                  .createTableIfNotExists("vehicle")
                      .column("id", BIGINT.identity(true))
                      .column("total_kilometers", INTEGER.nullable(false))
-                     .column("licence_plate", VARCHAR(100).nullable(false))
+                     .column("license_plate", VARCHAR(100).nullable(false))
                      .column("number_of_ports", INTEGER.nullable(false))
                      .column("color", VARCHAR(50).nullable(false))
                      .column("year", VARCHAR(50).nullable(false))
                      .column("seats", INTEGER.nullable(false))
                      .column("price_per_day", DECIMAL(10,2).nullable(false))
-                     .column("group_id", BIGINT.nullable(false))
-                     .column("model_id", BIGINT.nullable(false))
-                     .column("body_type_id", BIGINT.nullable(false))                     
+                     .column("group_id", BIGINT.nullable(true))
+                     .column("model_id", BIGINT.nullable(true))
+                     .column("body_type_id", BIGINT.nullable(true))                     
                  .constraints(
                      primaryKey("id"),                         
                      constraint("vehicle_group_fk").foreignKey("group_id").references("group", "id"),                     

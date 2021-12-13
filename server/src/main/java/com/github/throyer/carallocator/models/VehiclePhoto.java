@@ -1,37 +1,32 @@
 package com.github.throyer.carallocator.models;
 
+import com.github.throyer.carallocator.models.vehicle.Vehicle;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Entity;
+import static javax.persistence.FetchType.LAZY;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
 
 @Data
 @Entity
 @NoArgsConstructor
-public class Role implements GrantedAuthority {
+public class VehiclePhoto {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-
-    private String name;
-
+    
+    private String url;
+    
+    private Integer order;
+    
     @JsonIgnore
-    private String deletedName;
-
-    private String initials;
-
-    @JsonIgnore
-    private String deletedInitials;
-
-    private String description;
-
-    @Override
-    public String getAuthority() {
-        return getInitials();
-    }
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
 }
